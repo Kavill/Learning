@@ -1,2 +1,2 @@
 # Learning
-All the things that I'm learning.
+All the things that I'm learning. :)
