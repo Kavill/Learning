@@ -1,4 +1,4 @@
-<!DOCTYPE HTML>
+                                            <!DOCTYPE HTML>
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -12,12 +12,12 @@
     $month = date("n");
 
     for($i=$month; $i<=12; $i++){
-        $mies[] = $i;
+        $mies[$i] = $i;
     }
 
     $ile = count($mies);
 
-    for($i=0; $i<$ile; $i++){
+    for($i=$month; $i<12; $i++){
         if($mies[$i]==1) $mies[$i]="Styczeń";
         elseif($mies[$i]==2) $mies[$i] = "Luty";
         elseif($mies[$i]==3) $mies[$i] = "Marzec";
@@ -42,10 +42,11 @@
                     Podaj swoje miesięczne wynagrodzenie: <input type="text" name="pensja"><br/><br/>
                     Podaj stałe miesięczne wydatki (bilet miesięczny, rachunki itp.): <input type="text" name="stale"><br/><br/>
                     <?php
-                        for($i=0; $i<$ile; $i++){
+                        for($i=$month; $i<12; $i++){
                         echo"Wprowadź planowane wydatki na miesiąc <b>$mies[$i]</b>: ";
                         echo"<input class='pole' type='text' name='$mies[$i]'><br/><br/>";
                         }
+                    var_dump($mies);
                     ?>
                    <input type="submit" value="Oblicz">
                 </form>
