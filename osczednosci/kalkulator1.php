@@ -1,5 +1,6 @@
 <?php
 include('month.php');
+$po_wyplacie = $_POST['po_wyplacie'];
 $konto = $_POST['konto'];
 $pensja = $_POST['pensja'];
 $wydatki = $_POST['stale'];
@@ -18,10 +19,15 @@ if($pensja==0){
 for($i = $month; $i <= 12; $i++){
     if(isset($_POST[$mies[$i]])){
         if((((is_numeric($_POST[$mies[$i]])) || ($_POST[$mies[$i]]==""))) && ($_POST[$mies[$i]] >= 0)){
-            $konto = $konto + $pensja - $wydatki - $_POST[$mies[$i]];
+            if((($po_wyplacie == "true")) && ($i == $month)) $konto = $konto - $wydatki - $_POST[$mies[$i]];
+            else if($po_wyplacie == "false") $konto = $konto + $pensja - $wydatki - $_POST[$mies[$i]];
             $balans = $pensja - $wydatki - $_POST[$mies[$i]];
-            echo"Stan Twojego konta na miesiąc <b>$mies[$i]</b> będzie wynosić: <b>$konto</b>. ";
+            echo"Stan Twojego konta na miesiąc <b>$mies[$i]</b> będzie wynosić: <b>$konto PLN</b>. ";
+            if($balans > 0) echo"(Balans: <b style='color: #0f0;'>+$balans PLN</b>)";
+            elseif($balans == 0) echo"(Balans: <b>$balans PLN</b>)";
+            elseif($balans < 0) echo"(Balans: <b style='color: #f00;'>$balans PLN</b>)";
 
+            echo"<br/><br/>";
         }
         else die("Wartość wydatków zaplanowanych na <b>$mies[$i]</b> MUSI być liczbą równą lub większą od zera.");
     }
