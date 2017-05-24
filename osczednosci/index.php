@@ -13,16 +13,27 @@
         <section>
             <article>
                 <form method="post" action="kalkulator1.php">
-                    Podaj stan Twojego konta: <input type="text" name="konto"><br/><br/>
-                    Podaj swoje miesięczne wynagrodzenie: <input type="text" name="pensja"><br/><br/>
-                    Podaj stałe miesięczne wydatki (bilet miesięczny, rachunki itp.): <input type="text" name="stale"><br/><br/>
+                    <table>
+                        <tr>
+                            <td>Czy jesteś już po wypłacie?</td><td><input type="radio" name="po_wyplacie" value="true" checked>Tak<input type="radio" name="po_wyplacie" value="false">Nie</td>
+                        </tr>
+                        <tr>
+                            <td>Podaj stan Twojego konta: </td><td><input type="text" name="konto"></td>
+                        </tr>
+                        <tr>
+                            <td>Podaj swoje miesięczne wynagrodzenie:</td> <td><input type="text" name="pensja"></td>
+                        </tr>
+                        <tr>
+                            <td>Podaj stałe miesięczne wydatki (bilet miesięczny, rachunki itp.):</td><td><input type="text" name="stale"></td>
+                        </tr>
                     <?php
                         include('month.php');
                         for($i=$month; $i<=12; $i++){
-                        echo"Wprowadź planowane wydatki na miesiąc <b>$mies[$i]</b>: ";
-                        echo"<input class='pole' type='text' name='$mies[$i]'><br/><br/>";
+                        echo"<tr><td>Wprowadź planowane wydatki na miesiąc <b>$mies[$i]</b>: </td>";
+                        echo"<td><input class='pole' type='text' name='$mies[$i]'></td></tr>";
                         }
                     ?>
+                    </table>
                    <input type="submit" value="Oblicz">
                 </form>
             </article>
