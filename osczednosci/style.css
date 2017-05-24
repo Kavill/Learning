@@ -6,6 +6,16 @@ body{
     margin: 1%;
 }
 
+table{
+    border: 1px solid #000;
+}
+td{
+    text-align: center;
+    min-height: 30px;
+    border: 1px solid #000;
+    min-width: 100px;
+}
+
 header{
     height: 10%;
     font-size: 2.5rem;
@@ -30,10 +40,8 @@ b{
     font-weight: bold;
 }
 input{
-    width: 15%;
-    margin-right: 30%;
-    padding: 0.5rem;
-    float: right;
+    width: 60px;
+    margin: 2% auto;
 }
 
 .line{
