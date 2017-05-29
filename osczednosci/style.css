@@ -7,9 +7,12 @@ body{
 }
 
 table{
+    font-size: 1.5rem;
     border: 1px solid #000;
 }
-td{
+th{ font-weight: bold;}
+
+td,th{
     text-align: center;
     min-height: 30px;
     border: 1px solid #000;
