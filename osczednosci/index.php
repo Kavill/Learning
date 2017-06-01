@@ -28,6 +28,11 @@
                         </tr>
                     <?php
                         include('month.php');
+                        echo"<tr><td>Na ile miesięcy: </td><td><select>";
+                        for($i=1; $i<=24; $i++){
+                            echo"<option value='$i'>$i</option>";
+                        }
+                        echo"</select></td></tr>";
                         for($i=$month; $i<=12; $i++){
                         echo"<tr><td>Wprowadź planowane wydatki na miesiąc <b>$mies[$i]</b>: </td>";
                         echo"<td><input class='pole' type='text' name='$mies[$i]'></td></tr>";
