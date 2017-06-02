@@ -8,31 +8,15 @@
     </head>
     
     <body>
-        <header>Kalkulator oszczędności</header>
+        <header>Planowane wydatki</header>
         
         <section>
             <article>
                 <form method="post" action="kalkulator1.php">
                     <table>
-                        <tr>
-                            <td>Czy jesteś już po wypłacie?</td><td><input type="radio" name="po_wyplacie" value="true" checked>Tak<input type="radio" name="po_wyplacie" value="false">Nie</td>
-                        </tr>
-                        <tr>
-                            <td>Podaj stan Twojego konta: </td><td><input type="text" name="konto"></td>
-                        </tr>
-                        <tr>
-                            <td>Podaj swoje miesięczne wynagrodzenie:</td> <td><input type="text" name="pensja"></td>
-                        </tr>
-                        <tr>
-                            <td>Podaj stałe miesięczne wydatki (bilet miesięczny, rachunki itp.):</td><td><input type="text" name="stale"></td>
-                        </tr>
+                        
                     <?php
                         include('month.php');
-                        echo"<tr><td>Na ile miesięcy: </td><td><select>";
-                        for($i=1; $i<=24; $i++){
-                            echo"<option value='$i'>$i</option>";
-                        }
-                        echo"</select></td></tr>";
                         for($i=$month; $i<=12; $i++){
                         echo"<tr><td>Wprowadź planowane wydatki na miesiąc <b>$mies[$i]</b>: </td>";
                         echo"<td><input class='pole' type='text' name='$mies[$i]'></td></tr>";
