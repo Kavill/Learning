@@ -14,6 +14,14 @@
             <article>
                 <form method="post" action="index.php">
                     <table>
+                        <?php
+                            include('month.php');
+                            echo"<tr><td>Na ile miesięcy: </td><td><select>";
+                            for($i=1; $i<=24; $i++){
+                                echo"<option value='$i'>$i</option>";
+                            }
+                            echo"</select></td></tr>";
+                        ?>
                         <tr>
                             <td>Czy jesteś już po wypłacie?</td><td><input type="radio" name="po_wyplacie" value="true" checked>Tak<input type="radio" name="po_wyplacie" value="false">Nie</td>
                         </tr>
@@ -26,14 +34,7 @@
                         <tr>
                             <td>Podaj stałe miesięczne wydatki (bilet miesięczny, rachunki itp.):</td><td><input type="text" name="stale"></td>
                         </tr>
-                    <?php
-                        include('month.php');
-                        echo"<tr><td>Na ile miesięcy: </td><td><select>";
-                        for($i=1; $i<=24; $i++){
-                            echo"<option value='$i'>$i</option>";
-                        }
-                        echo"</select></td></tr>";
-                    ?>
+                    
                     </table>
                    <input type="submit" value="Dalej">
                 </form>
