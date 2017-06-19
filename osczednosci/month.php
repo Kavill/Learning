@@ -1,13 +1,14 @@
 <?php
     $month = date("n");
+    $year = date("Y");
 
-    for($i=$month; $i<=12; $i++){
+    for($i=1; $i<=12; $i++){
         $mies[$i] = $i;
     }
 
     $ile = count($mies);
 
-    for($i=$month; $i<=12; $i++){
+    for($i=1; $i<=12; $i++){
         if($mies[$i]==1) $mies[$i]="Styczeń";
         elseif($mies[$i]==2) $mies[$i] = "Luty";
         elseif($mies[$i]==3) $mies[$i] = "Marzec";
