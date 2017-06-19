@@ -8,22 +8,31 @@
     </head>
     
     <body>
-        <header>Planowane wydatki</header>
+        <header>Kalkulator oszczędności</header>
         
         <section>
             <article>
-                <form method="post" action="kalkulator1.php">
+                <form method="post" action="miesiace.php">
                     <table>
-                        
-                    <?php
-                        include('month.php');
-                        for($i=$month; $i<=12; $i++){
-                        echo"<tr><td>Wprowadź planowane wydatki na miesiąc <b>$mies[$i]</b>: </td>";
-                        echo"<td><input class='pole' type='text' name='$mies[$i]'></td></tr>";
-                        }
-                    ?>
+                        <?php
+                            include('month.php');
+                            echo"<tr><td>Na ile miesięcy: </td><td><input type='number' name='na_ile' min='1' max='12'></td></tr>";
+                        ?>
+                        <tr>
+                            <td>Czy jesteś już po wypłacie?</td><td><input type="radio" name="po_wyplacie" value="true" checked>Tak<input type="radio" name="po_wyplacie" value="false">Nie</td>
+                        </tr>
+                        <tr>
+                            <td>Podaj stan Twojego konta: </td><td><input type="text" name="konto"></td>
+                        </tr>
+                        <tr>
+                            <td>Podaj swoje miesięczne wynagrodzenie:</td> <td><input type="text" name="pensja"></td>
+                        </tr>
+                        <tr>
+                            <td>Podaj stałe miesięczne wydatki (bilet miesięczny, rachunki itp.):</td><td><input type="text" name="stale"></td>
+                        </tr>
+                    
                     </table>
-                   <input type="submit" value="Oblicz">
+                   <input type="submit" value="Dalej">
                 </form>
             </article>
         </section>
