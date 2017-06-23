@@ -1,5 +1,21 @@
 <?php
 
+class deanery extends students{
+    
+    public function getStudentAlbumNameFn(){
+        
+        return "Nazwa albumu studenta to".parent::getStudentAlbum();
+        
+    }
+    
+    public function getStudentAlbumNameVar(){
+        
+        return "Nazwa albumu studenta to ".$this->albumNumber;
+        
+    }
+    
+}
+
 class students{
     
     public $albumNumber;
@@ -32,13 +48,8 @@ class students{
     
 }
 
-    $obiekt = new students;
-    $obiekt->albumNumber = "4154";
-    echo $obiekt->getAlbumNumber();
-    echo"<br/>";
-    $obiekt->setStudentPesel(38921232);
-    echo $obiekt->getStudentPesel();
-
-    
+$obiekt = new deanery;
+$obiekt->albumNumber = 4154;
+$obiekt->getStudentAlbumNameFn();
 
 ?>
